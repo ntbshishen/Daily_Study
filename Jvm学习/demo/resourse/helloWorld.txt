@@ -1,0 +1,71 @@
+Classfile /F:/Daystudy/Jvm学习/demo/resourse/helloWorld.class
+  Last modified 2023年8月24日; size 463 bytes
+  MD5 checksum 8e0ba830c82c8dae41f13763dd9b4489
+  Compiled from "helloWorld.java"
+public class helloWorld
+  minor version: 0
+  major version: 55
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #5                          // helloWorld      
+  super_class: #6                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 2, attributes: 1        
+Constant pool:
+   #1 = Methodref          #6.#17         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #18.#19        // java/lang/System.out:Ljava/io/PrintStream;       
+   #3 = String             #20            // hello World!
+   #4 = Methodref          #21.#22        // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #5 = Class              #23            // helloWorld
+   #6 = Class              #24            // java/lang/Object
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               main
+  #12 = Utf8               ([Ljava/lang/String;)V
+  #13 = Utf8               MethodParameters
+  #14 = Utf8               args
+  #15 = Utf8               SourceFile
+  #16 = Utf8               helloWorld.java
+  #17 = NameAndType        #7:#8          // "<init>":()V
+  #18 = Class              #25            // java/lang/System
+  #19 = NameAndType        #26:#27        // out:Ljava/io/PrintStream;
+  #20 = Utf8               hello World!
+  #21 = Class              #28            // java/io/PrintStream
+  #22 = NameAndType        #29:#30        // println:(Ljava/lang/String;)V
+  #23 = Utf8               helloWorld
+  #24 = Utf8               java/lang/Object
+  #25 = Utf8               java/lang/System
+  #26 = Utf8               out
+  #27 = Utf8               Ljava/io/PrintStream;
+  #28 = Utf8               java/io/PrintStream
+  #29 = Utf8               println
+  #30 = Utf8               (Ljava/lang/String;)V
+{
+  public helloWorld();
+    descriptor: ()V             //方法修饰信息
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String hello World!
+         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 3: 0
+        line 4: 8
+    MethodParameters:
+      Name                           Flags
+      args
+}
+SourceFile: "helloWorld.java"
