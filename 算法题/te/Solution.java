@@ -296,6 +296,26 @@ private static void visitTree(TreeNode root , int_r result,List<Integer> stack){
     stack.remove(stack.size()-1);
       
 }
+public List<String> summaryRanges(int[] nums) {
+    List<String> result=new ArrayList<>();
+    int pos=0;
+    for(int i=0;i<nums.length;){
+       pos=i+1;
+       while(pos<nums.length){
+         if(nums[pos]!=nums[i]+1){
+             break;
+         }
+         pos++;
+       }
+    if(pos-i==1){
+        result.add(String.valueOf(i));
+    }
+    else{
+        result.add(String.format("%d -> %d",nums[i],nums[pos-1]));
+    }
+    }
+    return result;
+}
 
 
 }
