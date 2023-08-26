@@ -2,6 +2,7 @@ package te;
 import java.beans.Transient;
 import java.util.List;
 import te.matrix;
+import te.util.TreeNode;
 import te.c;
 class tes{
  
@@ -31,8 +32,19 @@ class tes{
         // List<Integer> re=matrix2.spiralOrder(matrix);
         // cc cc=new cc();
         // ccc ccc=new ccc();
-
-         System.out.println(Solution.maxDistToClosest(new int[]{0,1}));
+         TreeNode root=new TreeNode(3);
+         TreeNode node1Node=new TreeNode(1);
+         TreeNode node2Node=new TreeNode(3);
+         TreeNode node3Node=new TreeNode(4);
+         TreeNode node4Node=new TreeNode(1);
+         TreeNode node5Node=new TreeNode(5);
+         root.left=node1Node;
+         node1Node.left=node2Node;
+         root.right=node3Node;
+         node3Node.left=node4Node;
+         node3Node.right=node5Node;    
+         Solution.goodNodes(root);     
+         System.out.println("");
     }
 
   

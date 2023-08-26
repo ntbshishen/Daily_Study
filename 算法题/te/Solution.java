@@ -1,13 +1,19 @@
 package te;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Map.Entry;
+
+import te.util.TreeNode;
 
 public class Solution {
     public int minimumIncompatibility(int[] nums, int k) {
@@ -217,5 +223,86 @@ public static int maxDistToClosest(int[] seats) {
     }
     return max;
 }
-    
+public static int countServers(int[][] grid) {
+    List<String> set=new ArrayList<>();
+     List<String> temp=new ArrayList<>();
+    int count=0;
+    int pos=0;
+    for(int i=0;i<grid.length;i++){
+        count=0;
+        while(pos<grid[i].length){
+            if(grid[i][pos]==1){
+                temp.add(new String(i+"*"+pos));
+                count++;
+            }
+            pos++;
+        }
+        if(count>=2){
+            set.addAll(temp);
+        }
+        temp.clear();
+        pos=0;
+    }
+    for(int i=0;i<grid[0].length;i++){
+        count=0;
+        while(pos<grid.length){
+            if(grid[pos][i]==1){
+                temp.add(new String(pos+"*"+i));
+                System.out.println(pos+" : "+i);
+                count++;
+            }
+            pos++;
+        }
+        if(count>=2){
+             for(String te:temp){
+                System.out.println(te);
+                if(!set.contains(te)){
+                    set.add(te);
+                }
+            }
+            
+        }
+        temp.clear();
+        pos=0;
+    }     
+    return set.size();
+
 }
+/*
+ * 可以优化的点，第一去除int_r的类，第二不需要用list来维护路径，用一个·int 维护最大值。
+ */
+public static int goodNodes(TreeNode root) {
+    int_r result=new int_r(0);
+    List<Integer> stack=new ArrayList<>();
+    stack.add(root.val);
+    visitTree(root, result, stack);
+    System.out.println(result.result);
+    return result.result;
+        
+}
+private static void visitTree(TreeNode root , int_r result,List<Integer> stack){
+    if(root.val>=Collections.max(stack)){
+        result.result++;
+       // System.out.println(result+":");
+    }
+    //System.out.print(root.val+" ");
+    stack.add(root.val);
+    if(root.left!=null){
+        visitTree(root.left, result,stack);
+    }
+    if(root.right!=null){
+        visitTree(root.right, result,stack);
+    }
+    stack.remove(stack.size()-1);
+      
+}
+
+
+}
+class int_r{
+    public int result;
+    public int_r(int in){
+        this.result=in;
+    }
+}
+
