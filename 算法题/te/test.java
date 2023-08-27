@@ -7,12 +7,14 @@ import te.c;
 class tes{
  
  public static void main(String args[]){
-         /*int[][] matrix=new int[][]{
-                       {1},
-                       {2}
+         int[][] matrix=new int[][]{
+                       {1,3},
+                       {2,6},
+                       {8,10},
+                       {15,18}
                        
          };
-         c c1=new c();
+        /*c c1=new c();
          ListNode C=new ListNode(5);
          ListNode C1=new ListNode(2);
          ListNode C2=new ListNode(4);
@@ -43,8 +45,9 @@ class tes{
          root.right=node3Node;
          node3Node.left=node4Node;
          node3Node.right=node5Node;    
-         Solution.goodNodes(root);     
-         System.out.println("");
+        // Solution.goodNodes(root); 
+         Solution.merge(matrix)   ; 
+        // System.out.println("");
     }
 
   

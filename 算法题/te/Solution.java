@@ -316,8 +316,50 @@ public List<String> summaryRanges(int[] nums) {
     }
     return result;
 }
-
-
+/*
+ * 以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。
+ */
+public static int[][] merge(int[][] intervals) {
+    List<Intpair> pIntpairs=new ArrayList<>();
+    List<Intpair> resulList=new ArrayList<>();
+    for(int i=0;i<intervals.length;i++){
+        pIntpairs.add(new Intpair(intervals[i][0],intervals[i][1]));
+    }
+    pIntpairs.sort(new Comparator<Intpair>() {
+        @Override
+        public int compare(Intpair u1, Intpair u2) {
+			Integer left1= u1.left;
+			Integer left2= u2.left;
+			return  left1.compareTo(left2);
+		}
+    });
+    int left=pIntpairs.get(0).left;
+    int right=pIntpairs.get(0).right;
+    for(Intpair temp:pIntpairs){
+        if(temp.left<=right){
+            right=Math.max(temp.right, right);
+        }
+        else if(temp.left>right){
+            resulList.add(new Intpair(left, right));
+            left=temp.left;
+            right=temp.right;
+        }    
+    }
+     resulList.add(new Intpair(left, right));
+    for(Intpair temp:resulList){
+        System.out.println(temp.left+" -> "+temp.right);
+    }
+    return intervals;
+        
+}
+}
+class Intpair{
+    public int left;
+    public int right;
+    public  Intpair(int left,int right){
+        this.left=left;
+        this.right=right;
+    }
 }
 class int_r{
     public int result;
