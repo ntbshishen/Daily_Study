@@ -4,7 +4,7 @@ import java.util.List;
 import te.matrix;
 import te.util.TreeNode;
 import te.c;
-class tes{
+class test{
  
  public static void main(String args[]){
          int[][] matrix=new int[][]{
